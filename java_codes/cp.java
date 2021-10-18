@@ -10,6 +10,7 @@ public class apartments {
         // Find sizes of two subarrays to be merged
         int n1 = m - l + 1;
         int n2 = r - m;
+        int r = 0;
 
         /* Create temp arrays */
         int L[] = new int[n1];
