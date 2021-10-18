@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 typedef struct node {
     int data;
@@ -21,10 +21,10 @@ SLL *insert(SLL *head, int val)
         {
             temp = temp->next;
         }
-        SLL *new = (SLL*) malloc(sizeof(SLL*));
-        new->data = val;
-        new->next = NULL;
-        temp->next = new;
+        SLL *newNode = (SLL*) malloc(sizeof(SLL*));
+        newNode->data = val;
+        newNode->next = NULL;
+        temp->next = newNode;
     }
     return head;
 }
@@ -34,10 +34,10 @@ void printList(SLL *head)
     SLL*temp = head;
     while(temp != NULL)
     {
-        printf("%d -> ",temp->data);
+        cout << temp->data << " ";
         temp = temp->next;
     }
-    printf("NULL\n");
+    cout << "NULL\n";
 }
 
 SLL *reverseList(SLL *head)
@@ -85,12 +85,12 @@ int main()
     head = insert(head, 10);
     
 	// printing the list
-    printf("Original List : ");
+    cout << "Original List : ";
     printList(head);
 
     head = reverseList(head);
 
-    printf("Reversed List : ");
+    cout << "Reversed List : ";
     printList(head);
 
     return 0;
